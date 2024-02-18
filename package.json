@@ -1,0 +1,21 @@
+{
+  "name": "variant-624",
+  "version": "1.0.0",
+  "description": "Monorepo using Flask for backend and React for frontends",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "prepare": "yarn prepare-server && yarn prepare-client",
+    "prepare-server": "cd packages/server && python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt",
+    "prepare-client": "cd packages/client && yarn install",
+    "start": "yarn start-server & yarn start-client",
+    "start-server": "cd packages/server && . .venv/bin/activate && flask --app app run -p 8080",
+    "start-client": "cd packages/client && yarn dev"
+  }
+}

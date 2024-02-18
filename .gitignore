@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.vscode/
+__pycache__/
+
+yarn-error.log
+
+packages/server/.venv/
+packages/server/__pycache__/
+packages/client/node_modules
